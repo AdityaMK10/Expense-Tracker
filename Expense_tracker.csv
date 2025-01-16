@@ -1,0 +1,12 @@
+Timestamp,Amount,Category,Description
+2024-11-17 10:13:32,300.0,food,breakfast
+2024-11-17 10:13:46,1000.0,food,lunch
+2024-11-17 10:13:58,2000.0,food,dinner
+2024-11-17 10:42:43,4000.0,transport,Mysore to bangalore
+2024-11-17 11:06:09,200.0,transport,taxi
+2024-11-17 11:06:55,400.0,entertainment,movies
+2024-11-17 11:08:30,1000.0,food,dinner
+2024-11-17 11:10:53,800.0,entertainment,arcade
+2024-11-17 12:08:53,200.0,food,snacks
+2024-12-16 20:18:47,600.0,food,lunch
+2025-01-16 19:50:09,500.0,food,snacks
