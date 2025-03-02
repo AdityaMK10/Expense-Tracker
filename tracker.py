@@ -5,21 +5,17 @@ file_name = "Expense_tracker.csv"
 
 
 def expense_tracker():
-
-    amount = float(input("Enter the amount that you have spent:"))
-    category = input("Enter the category in which you have spent it on:")
-    description = input("enter a description:")
+    amount = float(input("Enter the amount that you have spent: "))
+    category = input("Enter the category in which you have spent it on: ")
+    description = input("Enter a description: ")
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    expense_list = [timestamp, amount, category, description]
 
-    expense_list = [timestamp, amount,category,description]
-
-    with open(file_name,mode = 'a' , newline='') as file:
+    with open(file_name, mode='a', newline='') as file:
         writer = csv.writer(file)
-
         if file.tell() == 0:
             writer.writerow(["Timestamp", "Amount", "Category", "Description"])
-
         writer.writerow(expense_list)
 
     print("Expense recorded successfully")
@@ -28,9 +24,8 @@ def expense_tracker():
 
 def total_expenses():
     category_totals = {}
-    with open("Expense_tracker.csv",mode='r') as file:
+    with open(file_name, mode='r') as file:
         reader = csv.reader(file)
-
         next(reader)
 
         for row in reader:
@@ -42,14 +37,18 @@ def total_expenses():
             else:
                 category_totals[category] = amount
 
-    for category, total in category_totals.items():
-        print(f"{category}: ₹ {total:.2f}")
-def main():
+    sorted_expenses = sorted(category_totals.items(), key=lambda x: x[1], reverse=True)
 
+    print("\nTotal Expenses by Category (Sorted in Descending Order):")
+    for category, total in sorted_expenses:
+        print(f"{category}: ₹ {total:.2f}")
+
+
+def main():
     while True:
         print("\nExpense Tracker")
         print("1. Add a new expense")
-        print("2. Display total expenses category-wise")
+        print("2. Display total expenses category-wise (sorted)")
         print("3. Exit")
         choice = input("Enter your choice (1/2/3): ")
 
@@ -65,9 +64,3 @@ def main():
 
 
 main()
-
-
-
-
-
-
