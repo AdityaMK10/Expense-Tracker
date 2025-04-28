@@ -48,7 +48,7 @@ def main():
     while True:
         print("\nExpense Tracker")
         print("1. Add a new expense")
-        print("2. Display total expenses category-wise (sorted)")
+        print("2. Display total expenses category-wise (sorted in descending order)")
         print("3. Exit")
         choice = input("Enter your choice (1/2/3): ")
 
